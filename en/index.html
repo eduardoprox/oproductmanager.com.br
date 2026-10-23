@@ -13,7 +13,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Eduardo Prox · Product Manager</title>
-<meta name="description" content="Product Manager with 10+ years in digital products. Specialized in B2B platforms and scale." />
+<meta name="description" content="Product Manager with 10+ years in digital products, specialized in B2B platforms, logistics and marketplaces." />
 <meta name="author" content="Eduardo Erzinger Prox" />
 <link rel="alternate" hreflang="pt-BR" href="https://www.oproductmanager.com.br/" />
 <link rel="alternate" hreflang="en" href="https://www.oproductmanager.com.br/en/" />
@@ -25,7 +25,7 @@
 <!-- Open Graph / LinkedIn -->
 <meta property="og:type" content="profile" />
 <meta property="og:title" content="Eduardo Prox · Product Manager" />
-<meta property="og:description" content="Product Manager with 10+ years in digital products. Specialized in B2B platforms and scale." />
+<meta property="og:description" content="Product Manager with 10+ years in digital products, specialized in B2B platforms, logistics and marketplaces." />
 <meta property="og:url" content="https://www.oproductmanager.com.br/en/" />
 <meta property="og:site_name" content="Eduardo Prox" />
 <meta property="og:locale" content="en_US" />
@@ -40,7 +40,7 @@
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Eduardo Prox · Product Manager" />
-<meta name="twitter:description" content="Product Manager with 10+ years in digital products. Specialized in B2B platforms and scale." />
+<meta name="twitter:description" content="Product Manager with 10+ years in digital products, specialized in B2B platforms, logistics and marketplaces." />
 <meta name="twitter:image" content="https://oproductmanager.com.br/assets/og-image.jpg?v=2" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -780,11 +780,22 @@
     body { font-size: 11pt; }
     .page { padding: 24px; max-width: 100%; }
     .fade { opacity: 1 !important; transform: none !important; }
-    section { padding: 28px 0; page-break-inside: avoid; }
-    .job { page-break-inside: avoid; }
+    /* seções podem quebrar entre páginas (evita a página 1 pela metade); só o título não fica sozinho */
+    section { padding: 28px 0; }
+    .section-head { break-after: avoid; page-break-after: avoid; }
+    .job, .edu-item, .skill-group { break-inside: avoid; page-break-inside: avoid; }
     a { color: var(--ink); border: none; }
-    .rec-track { flex-wrap: wrap; overflow: visible; }
-    .rec { box-shadow: none; page-break-inside: avoid; }
+    /* recomendações condensadas: 2 colunas, sem foto */
+    .rec-track { flex-wrap: wrap; overflow: visible; gap: 12px; padding: 0; margin: 0; }
+    .rec {
+      flex: 0 0 calc(50% - 6px);
+      padding: 14px 16px;
+      box-shadow: none;
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    .rec-photo, .rec-quote::before { display: none; }
+    .rec-quote { font-size: 10pt; margin-bottom: 10px; }
     .rec-arrow, .rec-count { display: none; }
     .lang-switch { display: none; }
   }
@@ -835,10 +846,11 @@
       <div class="section-body">
         <div class="section-aside fade">Professional summary</div>
         <div class="section-content fade d1">
-          <p class="lead">I'm a Product Manager and technology team leader with over 10 years in digital products. I've worked on cases in retail, consumer apps, B2B SaaS platforms, supply chain, transportation and logistics.</p>
-          <p class="lead">I have experience building products at scale and leading technology and digital product teams. I've worked hands-on as a Product Manager in high-impact contexts at Grupo Boticário, Magazine Luiza and Jovem Nerd, always at the intersection of strategy, data and execution.</p>
-          <p class="lead">I work well in ambiguous environments, with multiple stakeholders and impact-driven decisions.</p>
-          <p class="lead">I enjoy studying and actively applying AI-native tools to prototype, build and ship. They shorten the learning curve and expand what a PM can deliver without depending on engineering.</p>
+          <p class="lead">Product Manager with 10+ years building digital products across retail, consumer apps, B2B SaaS and logistics.</p>
+          <p class="lead">Most recently at Grupo Boticário, parent company of O Boticário, the world's largest beauty retailer by number of stores (Euromonitor), with nearly 4,000 stores across 16 countries. I led a team of 5 PMs on the company's proprietary logistics platform, which surpassed R$50M in annual recurring revenue and grew processed GMV by 258% year over year. Before that, I took its last-mile delivery app from zero to 1 million orders per month in under a year.</p>
+          <p class="lead">At Magazine Luiza, one of Brazil's largest retailers with 1,200+ stores and a leading e-commerce marketplace, I led a product and engineering squad at Jovem Nerd, the group's pop-culture media brand, relaunching a website that reached 4.5M monthly users.</p>
+          <p class="lead">I do my best work in ambiguous, multi-stakeholder environments, where decisions need to be grounded in data and tied to business impact.</p>
+          <p class="lead">I use AI-native tools daily to prototype, validate and ship faster. They shorten the path from idea to evidence and let me bring working prototypes, not just documents, into conversations with engineering.</p>
         </div>
       </div>
     </section>
@@ -876,25 +888,25 @@
             </figure>
             <figure class="rec">
               <div class="rec-photo"><img src="/assets/recs/mika.jpg" alt="" loading="lazy"></div>
-              <blockquote class="rec-quote">He can engage at the same technical level as the developers and uses that to negotiate extremely smartly with stakeholders. (…) An exceptional PM who will make a difference wherever he goes.</blockquote>
+              <blockquote class="rec-quote">He can engage at the same technical level as the developers and uses that to negotiate very shrewdly with stakeholders. (…) An exceptional PM who will make a difference wherever he goes.</blockquote>
               <figcaption>
                 <div class="rec-name">Mika Dafne</div>
                 <div class="rec-role">Front-end Developer · Grupo Boticário</div>
-                <div class="rec-relation">We worked together</div>
+                <div class="rec-relation">Colleague</div>
               </figcaption>
             </figure>
             <figure class="rec">
               <div class="rec-photo"><img src="/assets/recs/mauricio.jpg" alt="" loading="lazy"></div>
-              <blockquote class="rec-quote">(…) took on the GPM role and went on to lead all the PMs across the entire Logistics Platform product. This growth came as recognition of his work, which was always strongly driven by data, user experience and value delivery, never relying on perceptions and opinions alone.</blockquote>
+              <blockquote class="rec-quote">(…) took on the GPM role and went on to lead all the PMs across the entire Logistics Platform product. This growth came as recognition of his work, which was always strongly driven by data, user experience and value delivery, never on gut feeling alone.</blockquote>
               <figcaption>
                 <div class="rec-name">Mauricio Tognon</div>
                 <div class="rec-role">Tech Manager · Grupo Boticário</div>
-                <div class="rec-relation">Peers in leadership</div>
+                <div class="rec-relation">Leadership peer</div>
               </figcaption>
             </figure>
             <figure class="rec">
               <div class="rec-photo"><img src="/assets/recs/bruno.jpg" alt="" loading="lazy"></div>
-              <blockquote class="rec-quote">He became one of the best managers I've had the opportunity to work with: always very caring toward the team and the prioritization of projects. He raised the bar for the team during his tenure, continuously seeking better processes and closer integration between the team and the business areas.</blockquote>
+              <blockquote class="rec-quote">He became one of the best managers I've had the opportunity to work with, always deeply caring toward the team and thoughtful about project prioritization. He raised the bar for the team during his tenure, continuously seeking better processes and closer integration between the team and the business areas.</blockquote>
               <figcaption>
                 <div class="rec-name">Bruno Real</div>
                 <div class="rec-role">Product Designer · Magazine Luiza</div>
@@ -903,7 +915,7 @@
             </figure>
             <figure class="rec">
               <div class="rec-photo"><img src="/assets/recs/ricardo.jpg" alt="" loading="lazy"></div>
-              <blockquote class="rec-quote">When I joined, Prox was working as a PM and already stood out, often held up as an example to follow for his excellent communication with stakeholders and his product vision, with strongly data-driven decisions. It wasn't long before he was promoted to GPM, becoming my manager.</blockquote>
+              <blockquote class="rec-quote">When I joined, Prox was working as a PM and already stood out, often held up as a role model for his excellent communication with stakeholders and his product vision, with strongly data-driven decisions. It wasn't long before he was promoted to GPM, becoming my manager.</blockquote>
               <figcaption>
                 <div class="rec-name">Ricardo Ferreira de Abreu</div>
                 <div class="rec-role">Product Manager · Grupo Boticário</div>
@@ -916,16 +928,16 @@
               <figcaption>
                 <div class="rec-name">Jean Marcel Egles</div>
                 <div class="rec-role">Agile Coach · Grupo Boticário</div>
-                <div class="rec-relation">We worked together</div>
+                <div class="rec-relation">Colleague</div>
               </figcaption>
             </figure>
             <figure class="rec">
               <div class="rec-photo"><img src="/assets/recs/danny.jpg" alt="" loading="lazy"></div>
-              <blockquote class="rec-quote">He made an important contribution to the continuity and the building of the product strategy, supporting the team with great partnership, commitment and drive to get things done.</blockquote>
+              <blockquote class="rec-quote">He played a key role in shaping and sustaining the product strategy, supporting the team with great partnership, commitment and drive to get things done.</blockquote>
               <figcaption>
                 <div class="rec-name">Danny Pereira Mattos</div>
                 <div class="rec-role">Senior Technology Manager · Grupo Boticário</div>
-                <div class="rec-relation">My direct manager</div>
+                <div class="rec-relation">My manager</div>
               </figcaption>
             </figure>
           </div>
@@ -946,129 +958,129 @@
         <h2 class="section-title">Experience</h2>
       </div>
       <div class="section-body">
-        <div class="section-aside fade">MY EXPERIENCE AND CAREER</div>
+        <div class="section-aside fade">Career history</div>
         <div class="section-content fade d1">
           <div class="timeline">
 
             <article class="job">
               <div class="content">
-                <h3 class="title">Staff Product Manager <span class="role-suffix">— Franchisee Marketplace</span></h3>
+                <h3 class="title">Staff Product Manager <span class="role-suffix">· Franchisee Marketplace</span></h3>
                 <p class="company">Grupo Boticário <span class="at">· Remote</span></p>
-                <p class="summary">For three months, I led the product strategy for the marketplace dedicated to franchisees, replacing a third-party solution and simplifying the purchase of supplies for their operations.</p>
+                <p class="summary">Led product strategy for a B2B marketplace serving Grupo Boticário's franchisees, replacing a third-party solution and simplifying how stores purchase operational supplies.</p>
                 <div class="results-label">Results</div>
                 <ul class="results">
-                  <li><b>+42 points</b> in CSAT</li>
-                  <li><b>−61%</b> in Contact Rate</li>
-                  <li>Estimated <b>66%</b> reduction in support costs</li>
-                  <li><b>−50%</b> in Lead Time by integrating AI into the product workflow</li>
+                  <li><b>+42 pts</b> in CSAT during the pilot</li>
+                  <li><b>61%</b> lower contact rate, with an estimated <b>66%</b> reduction in support costs</li>
+                  <li><b>50%</b> shorter lead time by embedding AI into the product workflow</li>
                 </ul>
               </div>
               <div class="meta">
-                <div class="period">Aug 2026 —<br>Oct 2026</div>
+                <div class="period">Aug 2026 –<br>Oct 2026</div>
               </div>
             </article>
 
             <article class="job">
               <div class="content">
-                <h3 class="title">Group Product Manager <span class="role-suffix">— Logistics Platform</span></h3>
+                <h3 class="title">Group Product Manager <span class="role-suffix">· Logistics Platform</span></h3>
                 <p class="company">Grupo Boticário <span class="at">· Remote</span></p>
-                <p class="summary">I led the development and evolution of Grupo Boticário's proprietary TMS, managing a team of 5 product managers and aligning product strategy with the business goals of the world's largest cosmetics franchise network.</p>
+                <p class="summary">Led product for Grupo Boticário's proprietary transportation management system (TMS), managing 5 Product Managers and aligning the platform roadmap with the business goals of a franchise network of nearly 4,000 stores.</p>
                 <div class="results-label">Results</div>
                 <ul class="results">
-                  <li><b>&gt;R$50M</b> in ARR (annual recurring revenue)</li>
-                  <li><b>+32%</b> in order volume YoY</li>
-                  <li><b>+258%</b> in GMV processed YoY</li>
-                  <li><b>28%</b> reduction in overall operational Lead Time</li>
-                  <li><b>11%</b> reduction in contact rate and <b>5%</b> reduction in logistics costs</li>
-                  <li><b>90%</b> user satisfaction (CSAT)</li>
+                  <li><b>R$50M+</b> in ARR</li>
+                  <li><b>+258%</b> in processed GMV and <b>+32%</b> in order volume, year over year</li>
+                  <li><b>28%</b> shorter end-to-end operational lead time</li>
+                  <li><b>11%</b> lower contact rate and <b>5%</b> lower logistics costs</li>
+                  <li><b>90%</b> CSAT</li>
                 </ul>
               </div>
               <div class="meta">
-                <div class="period">Jul 2024 —<br>Aug 2026</div>
+                <div class="period">Aug 2024 –<br>Aug 2026</div>
               </div>
             </article>
 
             <article class="job">
               <div class="content">
-                <h3 class="title">Specialist Product Manager <span class="role-suffix">— gb.log entregas app</span></h3>
+                <h3 class="title">Specialist Product Manager <span class="role-suffix">· gb.log Entregas (last-mile delivery app)</span></h3>
                 <p class="company">Grupo Boticário <span class="at">· Remote</span></p>
-                <p class="summary">I developed and executed the product strategy for the Last Mile delivery app, driving planning for a cross-functional team and bringing research, metrics and market analysis into the roadmap.</p>
+                <p class="summary">Defined and executed the product strategy for the company's last-mile delivery app, leading a cross-functional team and grounding the roadmap in user research, metrics and market analysis.</p>
                 <div class="results-label">Results</div>
                 <ul class="results">
-                  <li>From <b>0 to 1 million</b> orders in less than a year</li>
-                  <li><b>96%</b> user satisfaction</li>
-                  <li><b>4.7</b> stars on the Play Store and <b>5,000+</b> drivers</li>
-                  <li><b>52%</b> reduction in total distance traveled by drivers</li>
+                  <li><b>0 to 1M</b> orders per month in under 12 months</li>
                   <li><b>R$46M/year</b> in savings for the franchise network</li>
-                  <li><b>R$0.10</b> reduction in average cost per order</li>
+                  <li><b>52%</b> less distance driven by couriers</li>
+                  <li><b>5,000+</b> active drivers, <b>4.7</b> rating on Google Play and <b>96%</b> CSAT</li>
                 </ul>
               </div>
               <div class="meta">
-                <div class="period">May 2023 —<br>Aug 2024</div>              </div>
+                <div class="period">May 2023 –<br>Aug 2024</div>
+              </div>
             </article>
 
             <article class="job">
               <div class="content">
                 <h3 class="title">Product &amp; Engineering Lead <span class="role-suffix">(Squad Lead)</span></h3>
                 <p class="company">Magazine Luiza / Jovem Nerd <span class="at">· Remote</span></p>
-                <p class="summary">I led a dynamic team of 8 developers and a designer, planning and driving the execution of technology products with an agile, integrated approach and tracking metrics such as Lead Time, Cycle Time and Throughput.</p>
+                <p class="summary">Led a squad of 8 engineers and 1 designer across Jovem Nerd's digital products (new website, content portal and proprietary crowdfunding platform), owning planning, delivery and flow metrics such as lead time, cycle time and throughput.</p>
                 <div class="results-label">Results</div>
                 <ul class="results">
-                  <li><b>64%</b> reduction in infrastructure costs</li>
-                  <li><b>R$8.6M</b> through a pilot crowdfunding tool · R$1.1M in cost avoidance</li>
-                  <li><b>+130%</b> in display media value</li>
-                  <li><b>4.5M</b> daily users on the new website, NPS 90</li>
+                  <li><b>R$8.6M</b> raised in the pilot of a proprietary crowdfunding platform, plus <b>R$1.1M</b> in cost avoidance</li>
+                  <li><b>64%</b> lower infrastructure costs</li>
+                  <li><b>+130%</b> in display advertising revenue</li>
+                  <li><b>4.5M</b> monthly users on the new website, with <b>NPS 90</b></li>
                 </ul>
               </div>
               <div class="meta">
-                <div class="period">Dec 2021 —<br>May 2023</div>              </div>
+                <div class="period">Dec 2021 –<br>May 2023</div>
+              </div>
             </article>
 
             <article class="job">
               <div class="content">
                 <h3 class="title">Product &amp; Engineering Lead <span class="role-suffix">(Squad Lead)</span></h3>
                 <p class="company">Grupo Boticário <span class="at">· Remote</span></p>
-                <p class="summary">Over three years, I worked directly on the Group's digital transformation across three roles: innovation analysis, portfolio consulting &amp; product ops, and technical squad management. Along the way, I spread agile practices and a product-based operating model.</p>
+                <p class="summary">Led the squad responsible for the employee journey at Grupo Boticário, starting with new-hire onboarding and later owning the company-wide employee services portal built on ServiceNow. Brought product practices and an agile operating model to an area traditionally run as internal IT.</p>
+                <p class="summary">I joined the Group through its innovation team, where I prototyped and tested 0-to-1 concepts in retail, such as RFID tagging, smart mirrors and an early version of a brand loyalty program.</p>
                 <div class="results-label">Results</div>
                 <ul class="results">
-                  <li><b>+600%</b> in hiring manager satisfaction</li>
-                  <li><b>−22%</b> in Time to Fill (TTF)</li>
+                  <li><b>7x</b> higher hiring manager satisfaction</li>
+                  <li><b>22%</b> shorter time to fill open positions</li>
                   <li><b>+10%</b> in candidate experience score</li>
-                  <li><b>−2 weeks</b> in onboarding for new employees</li>
+                  <li>Onboarding for new employees shortened by <b>2 weeks</b></li>
                 </ul>
               </div>
               <div class="meta">
-                <div class="period">Mar 2018 —<br>Nov 2021</div>              </div>
+                <div class="period">Mar 2018 –<br>Nov 2021</div>
+              </div>
             </article>
 
             <article class="job">
               <div class="content">
-                <h3 class="title">Co‑founder &amp; Product Manager</h3>
+                <h3 class="title">Co-founder &amp; Product Manager</h3>
                 <p class="company">freela.today <span class="at">· Curitiba, Brazil</span></p>
-                <p class="summary">I led the conception and development of freela.today, a platform that connected freelancers to one-off jobs, addressing the pain of finding and hiring professionals on short notice. I ran the Product‑Market Fit process with interviews and usability tests, from ideation to MVP and direct commercial validation with the first customers. After validating the initial assumptions, I chose to wind down the operation before the fundraising round to focus on strategic product consulting.</p>
+                <p class="summary">Co-founded a platform connecting companies to freelancers for short-notice, one-off jobs. Ran product-market fit validation through customer interviews and usability tests, taking the product from idea to MVP and first paying B2B customers. Based on what validation showed, I chose to wind down before the funding round and moved into product strategy consulting.</p>
                 <div class="results-label">Results</div>
                 <ul class="results">
-                  <li><b>−30%</b> in search and hiring time for one-off jobs (B2B)</li>
-                  <li>Replaced manual, inefficient spreadsheet-based workflows</li>
-                  <li>From ideation to commercial validation with the first B2B customers</li>
-                  <li>Strategic decision to wind down before fundraising, based on learnings</li>
+                  <li><b>30%</b> faster search and hiring for one-off jobs</li>
+                  <li>Replaced spreadsheet-based hiring workflows for early customers</li>
                 </ul>
               </div>
               <div class="meta">
-                <div class="period">Aug 2016 —<br>Dec 2017</div>              </div>
+                <div class="period">Aug 2016 –<br>Dec 2017</div>
+              </div>
             </article>
 
             <article class="job">
               <div class="content">
                 <h3 class="title">Product Owner</h3>
                 <p class="company">Gazeta do Povo <span class="at">· Curitiba, Brazil</span></p>
-                <p class="summary">I led the transformation of the Gazeta do Povo newspaper's car classifieds into the vehicle marketplace enkontra.com, turning a traditional business model into a dynamic digital platform. I &#8220;killed&#8221; the print classifieds. I handled backlog management, data analysis, rollout and go‑to‑market for initiatives such as a &#8216;freemium&#8217; listing model.</p>
+                <p class="summary">Led the transformation of Gazeta do Povo's print car classifieds into enkontra.com, a digital vehicle marketplace, and sunset the print product. Owned backlog, data analysis, rollout and go-to-market, including a freemium listing model.</p>
               </div>
               <div class="meta">
-                <div class="period">Mar 2013 —<br>May 2016</div>              </div>
+                <div class="period">Mar 2013 –<br>May 2016</div>
+              </div>
             </article>
 
-            <div class="more-note">+ 5 more years of earlier experience — details on LinkedIn.</div>
+            <div class="more-note">Plus 5 years of earlier experience. Details on LinkedIn.</div>
           </div>
         </div>
       </div>
@@ -1085,27 +1097,24 @@
         <div class="section-content fade d1">
 
           <div class="skill-group">
-            <div class="cat"><span class="num">i.</span>Product Management</div>
+            <div class="cat"><span class="num">i.</span>Product</div>
             <div class="tags">
-              <span class="tag">Product management</span>
-              <span class="tag">Roadmap building</span>
-              <span class="tag">Initiative prioritization</span>
-              <span class="tag">OKR / KPIs</span>
-              <span class="tag">Technical discovery</span>
+              <span class="tag">Product strategy</span>
+              <span class="tag">Roadmapping</span>
+              <span class="tag">Prioritization</span>
+              <span class="tag">Product discovery</span>
               <span class="tag">User research</span>
+              <span class="tag">OKRs &amp; KPIs</span>
               <span class="tag">Go-to-market</span>
-              <span class="tag">Value engineering</span>
-              <span class="tag">Navigating ambiguity</span>
               <span class="tag">Scrum / Kanban</span>
             </div>
           </div>
 
           <div class="skill-group">
-            <div class="cat"><span class="num">ii.</span>Leadership &amp; Strategy</div>
+            <div class="cat"><span class="num">ii.</span>Leadership</div>
             <div class="tags">
-              <span class="tag">Product team leadership</span>
+              <span class="tag">PM team leadership</span>
               <span class="tag">Stakeholder management</span>
-              <span class="tag">Strategic alignment</span>
               <span class="tag">Portfolio management</span>
               <span class="tag">Product Ops</span>
               <span class="tag">Change management</span>
@@ -1113,50 +1122,36 @@
           </div>
 
           <div class="skill-group">
-            <div class="cat"><span class="num">iii.</span>Data &amp; Analytics</div>
+            <div class="cat"><span class="num">iii.</span>Data</div>
             <div class="tags">
+              <span class="tag">SQL (BigQuery)</span>
               <span class="tag">Looker</span>
               <span class="tag">Google Analytics</span>
-              <span class="tag">SQL (GCP)</span>
-              <span class="tag">Business metrics analysis</span>
-              <span class="tag">KPI definition</span>
-              <span class="tag">Digital product metrics</span>
+              <span class="tag">Metrics design</span>
             </div>
           </div>
 
           <div class="skill-group">
-            <div class="cat"><span class="num">iv.</span>Design &amp; Prototyping</div>
+            <div class="cat"><span class="num">iv.</span>AI &amp; Prototyping</div>
             <div class="tags">
+              <span class="tag featured" style="color: rgb(51, 51, 51); font-weight: 400">Claude Code</span>
+              <span class="tag featured" style="color: rgb(51, 51, 51); font-weight: 400">Claude Design</span>
+              <span class="tag featured" style="color: rgb(51, 51, 51); font-weight: 400">Lovable</span>
               <span class="tag">Figma</span>
               <span class="tag">Miro</span>
-              <span class="tag">Claude Design</span>
-              <span class="tag">High-fidelity prototyping</span>
-              <span class="tag">PWA development</span>
-              <span class="tag">Vibe coding</span>
-              <span class="tag">Lovable</span>
+              <span class="tag">AI-assisted prototyping</span>
+              <span class="tag">Workflow automation</span>
+              <span class="tag featured" style="color: rgb(51, 51, 51); font-weight: 400">Gemini</span>
             </div>
           </div>
 
           <div class="skill-group">
-            <div class="cat"><span class="num">v.</span>Tools &amp; Platforms</div>
+            <div class="cat"><span class="num">v.</span>Tools</div>
             <div class="tags">
               <span class="tag">Jira</span>
               <span class="tag">Businessmap</span>
               <span class="tag">Notion</span>
               <span class="tag">Confluence</span>
-              <span class="tag">Backlog management</span>
-              <span class="tag">Documentation and agile workflows</span>
-            </div>
-          </div>
-
-          <div class="skill-group">
-            <div class="cat"><span class="num">vi.</span>Applied AI</div>
-            <div class="tags">
-              <span class="tag featured" style="color: rgb(51, 51, 51); font-weight: 400">Claude Code</span>
-              <span class="tag featured" style="color: rgb(51, 51, 51); font-weight: 400">Claude Design</span>
-              <span class="tag featured" style="color: rgb(51, 51, 51); font-weight: 400">Lovable</span>
-              <span class="tag featured" style="color: rgb(51, 51, 51); font-weight: 400">Google AI Stack</span>
-              <span class="tag">Automation</span>
             </div>
           </div>
 
@@ -1179,23 +1174,23 @@
               <h3>Academic background</h3>
 
               <div class="edu-item">
-                <div class="deg">Technology Degree in Digital Games <span class="status">— paused in the final year</span></div>
-                <div class="inst"><span>Pontifical Catholic University · Curitiba</span><span class="when">2018 — 2020</span></div>
+                <div class="deg">Associate Degree (Tecnólogo) in Digital Games <span class="status">· Incomplete, final year</span></div>
+                <div class="inst"><span>PUCPR (Pontifical Catholic University of Paraná) · Curitiba</span><span class="when">2018 – 2020</span></div>
               </div>
 
               <div class="edu-item">
                 <div class="deg">Flex Graduate Program in Business</div>
-                <div class="inst"><span>Universidade Positivo · Curitiba</span><span class="when">2012 — 2013</span></div>
+                <div class="inst"><span>Universidade Positivo · Curitiba</span><span class="when">2012 – 2013</span></div>
               </div>
 
               <div class="edu-item">
-                <div class="deg">Graduate Program in Business Planning and Management <span class="status">— paused</span></div>
-                <div class="inst"><span>FAE Business School · Curitiba</span><span class="when">2010 — 2011</span></div>
+                <div class="deg">Postgraduate Program in Business Planning and Management <span class="status">· Incomplete</span></div>
+                <div class="inst"><span>FAE Business School · Curitiba</span><span class="when">2010 – 2011</span></div>
               </div>
 
               <div class="edu-item">
-                <div class="deg">Bachelor's Degree in Advertising</div>
-                <div class="inst"><span>Universidade Positivo · Curitiba</span><span class="when">2006 — 2009</span></div>
+                <div class="deg">Bachelor's Degree in Social Communication (Advertising)</div>
+                <div class="inst"><span>Universidade Positivo · Curitiba</span><span class="when">2006 – 2009</span></div>
               </div>
             </div>
 
@@ -1253,7 +1248,7 @@
             </div>
             <div class="lang">
               <div class="name">English</div>
-              <div class="level"><span class="badge">●</span> Proficient &amp; fluent · CPE (C2 Proficiency), Michigan Institute</div>
+              <div class="level"><span class="badge">●</span> Full professional proficiency · ECPE (C2), University of Michigan</div>
             </div>
           </div>
         </div>
