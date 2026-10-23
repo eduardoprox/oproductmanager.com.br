@@ -169,14 +169,22 @@
     margin: 22px 0 18px;
   }
 
+  /* 3 contatos por linha; rótulos e valores alinhados em colunas */
   .contacts {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px 28px;
+    display: grid;
+    grid-template-columns: repeat(3, max-content max-content);
+    gap: 8px 10px;
+    align-items: baseline;
     font-size: 14px;
     color: var(--ink);
   }
-  .contacts .item { display: inline-flex; align-items: center; gap: 8px; }
+  .contacts .item { display: contents; }
+  .contacts .item:not(:nth-child(3n+1)) .label { padding-left: 20px; }
+  /* sem largura para 3 colunas: um contato por linha */
+  @media (max-width: 1100px) {
+    .contacts { grid-template-columns: max-content minmax(0, 1fr); }
+    .contacts .item:not(:nth-child(3n+1)) .label { padding-left: 0; }
+  }
   .contacts .label {
     font-size: 10px;
     font-weight: 600;
