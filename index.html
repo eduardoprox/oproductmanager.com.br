@@ -169,21 +169,20 @@
     margin: 22px 0 18px;
   }
 
-  /* 3 contatos por linha; rótulos e valores alinhados em colunas */
+  /* 3 contatos por linha, cada um começando no mesmo ponto da coluna */
   .contacts {
     display: grid;
-    grid-template-columns: repeat(3, max-content max-content);
-    gap: 8px 10px;
+    grid-template-columns: repeat(3, max-content);
+    gap: 8px 36px;
     align-items: baseline;
     font-size: 14px;
     color: var(--ink);
   }
-  .contacts .item { display: contents; }
-  .contacts .item:not(:nth-child(3n+1)) .label { padding-left: 20px; }
-  /* sem largura para 3 colunas: um contato por linha */
+  .contacts .item { display: inline-flex; align-items: baseline; gap: 8px; }
+  /* sem largura para 3 colunas: um contato por linha, valores alinhados */
   @media (max-width: 1100px) {
-    .contacts { grid-template-columns: max-content minmax(0, 1fr); }
-    .contacts .item:not(:nth-child(3n+1)) .label { padding-left: 0; }
+    .contacts { grid-template-columns: max-content minmax(0, 1fr); gap: 8px 10px; }
+    .contacts .item { display: contents; }
   }
   .contacts .label {
     font-size: 10px;
@@ -663,9 +662,9 @@
         <div class="section-aside fade">Resumo profissional</div>
         <div class="section-content fade d1">
           <p class="lead">Sou um Product Manager e líder de times de tecnologia com mais de 10 anos em produtos digitais. Trabalhei em cases em varejo, consumer apps, plataformas SaaS B2B, supply chain, transportes e logística.</p>
-          <p class="lead">Tenho experiência construindo produtos em escala, liderando times de tecnologia e produtos digitais — inclusive atuando diretamente como PM em contextos de alto impacto. Passei por Grupo Boticário, Magazine Luiza e Jovem Nerd, sempre na interseção entre estratégia, dados e execução.</p>
+          <p class="lead">Tenho experiência construindo produtos em escala, liderando times de tecnologia e produtos digitais. Atuando diretamente como PM em contextos de alto impacto: passei por Grupo Boticário, Magazine Luiza e Jovem Nerd, sempre na interseção entre estratégia, dados e execução.</p>
           <p class="lead">Trabalho bem em ambientes ambíguos, com múltiplos stakeholders e decisões orientadas por impacto.</p>
-          <p class="lead">Gosto de estudar e aplicar ativamente ferramentas nativas de IA para prototipar, construir e entregar — reduzindo o tempo de aprendizado e expandindo o que um PM pode entregar sem depender de engenharia.</p>
+          <p class="lead">Gosto de estudar e aplicar ativamente ferramentas nativas de IA para prototipar, construir e entregar. Reduzindo o tempo de aprendizado e expandindo o que um PM pode entregar sem depender de engenharia.</p>
         </div>
       </div>
     </section>
