@@ -823,6 +823,24 @@
               </figcaption>
             </figure>
             <figure class="rec">
+              <div class="rec-photo"><img src="assets/recs/mauricio.jpg" alt="" loading="lazy"></div>
+              <blockquote class="rec-quote">(…) assumiu posição de GPM e passou a liderar todos os PMs de todo o Produto Plataforma Logística. Esse crescimento veio como reconhecimento do seu trabalho realizado, que sempre foi muito orientado a dados, experiência dos usuários e entrega de valor, não se deixando levar por apenas percepções e opiniões.</blockquote>
+              <figcaption>
+                <div class="rec-name">Mauricio Tognon</div>
+                <div class="rec-role">Tech Manager · Grupo Boticário</div>
+                <div class="rec-relation">Fomos pares na liderança</div>
+              </figcaption>
+            </figure>
+            <figure class="rec">
+              <div class="rec-photo"><img src="assets/recs/bruno.jpg" alt="" loading="lazy"></div>
+              <blockquote class="rec-quote">Ele se tornou um dos melhores gestores com quem tive a oportunidade de trabalhar: sempre muito cuidadoso com o time e com a priorização dos projetos. Ele elevou a régua da equipe durante sua gestão, buscando continuamente a melhoria de processos e a integração entre equipe e áreas de negócio.</blockquote>
+              <figcaption>
+                <div class="rec-name">Bruno Real</div>
+                <div class="rec-role">Product Designer · Magazine Luiza</div>
+                <div class="rec-relation">Foi meu liderado direto</div>
+              </figcaption>
+            </figure>
+            <figure class="rec">
               <div class="rec-photo"><img src="assets/recs/ricardo.jpg" alt="" loading="lazy"></div>
               <blockquote class="rec-quote">Quando entrei, o Prox atuava como PM e já se destacava, sendo usado diversas vezes como exemplo a ser seguido, pela excelente comunicação com os stakeholders e por sua visão de produtos com decisões fortemente baseadas em dados. Não demorou muito para ser promovido a GPM, tornando-se meu gestor.</blockquote>
               <figcaption>
@@ -1210,8 +1228,15 @@
       prev.disabled = track.scrollLeft <= 2;
       next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
     }
-    prev.addEventListener('click', function () { track.scrollBy({ left: -perView() * step() }); });
-    next.addEventListener('click', function () { track.scrollBy({ left: perView() * step() }); });
+    // páginas fixas (1–3, 4–6, …); a última encosta no fim quando não fecha 3
+    function goTo(index) { track.scrollTo({ left: index * step() }); }
+    function first() { return Math.round(track.scrollLeft / step()); }
+    prev.addEventListener('click', function () {
+      goTo(Math.max(0, Math.floor((first() - 1) / perView()) * perView()));
+    });
+    next.addEventListener('click', function () {
+      goTo((Math.floor(first() / perView()) + 1) * perView());
+    });
     track.addEventListener('scroll', function () { requestAnimationFrame(update); }, { passive: true });
     window.addEventListener('resize', update);
     update();
